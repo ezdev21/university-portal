@@ -1,6 +1,6 @@
 @extends('layouts.student-app')
 @section('content')
- <h2>Student Grade Result</h2>
+ <p>Student Grade Result</p>
  @forelse ($student->courses as $course)
      <table>
          <thead>

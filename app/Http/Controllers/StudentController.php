@@ -34,7 +34,10 @@ class StudentController extends Controller
         $student=Student::findOrFail($id);
         return view('student.service',['student'=>$student]);
     }
-
+    public function courseRegister(Student $student,Request $request)
+    {
+      
+    }
     public function index(){
 
     }

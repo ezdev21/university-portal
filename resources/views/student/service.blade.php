@@ -1,6 +1,6 @@
 @extends('layouts.student-app')
 @section('content')
     <div>
-        <h2>student services</h2>
+       <p>student services</p>
     </div>
 @endsection

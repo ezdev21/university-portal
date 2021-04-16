@@ -52,7 +52,7 @@ Route::prefix('student')->group(function(){
     Route::get('{id}/profile/edit',[StudentController::class,'edit'])->name('student.profile.edit');
     Route::patch('{id}/profile',[StudentController::class,'update'])->name('student.profile.update');
     Route::get('{id}/courseRegister',[StudentController::class,'showCourseRegistrationForm'])->name('student.course.register');
-    Route::post('{id}/courseRegister',[StudentController::class,'register'])->name('student.course.register.submit');
+    Route::post('{id}/courseRegister',[StudentController::class,'courseRegister'])->name('student.course.register.submit');
     Route::get('{id}/grade',[StudentController::class,'grade'])->name('student.grade');
     Route::get('{id}/service',[StudentController::class,'service'])->name('student.service');
 });

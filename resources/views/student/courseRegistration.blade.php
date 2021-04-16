@@ -1,7 +1,31 @@
 @extends('layouts.student-app')
 @section('content')
-  <h2>course Registration</h2>
   <div>
-      <p><a href="{{route('student.course.register.submit',$student->id)}}"></a></p>
-  </div>  
+    <p>course Registration</p>
+    <div>
+        <form action="{{route('student.course.register',$student->id)}}" method="post">
+          @csrf
+          @forelse ($student->courses as $course)
+              <ul>
+                <li>
+                  <input type="checkbox">
+                  <span>{{$course->title}}</span>
+                </li>
+              </ul>
+          @empty
+              <p>sorry you don't have courses to register in this semester</p>
+          @endforelse
+          <input type="submit" value="register">
+        </form>
+    </div>
+    <div>
+      @forelse ($student->courses as $course)
+          <ul>
+            <li>{{$course->title}}</li>
+          </ul>
+      @empty
+          <p>status not registered for this semester</p>
+      @endforelse
+    </div>   
+  </div> 
 @endsection
