@@ -16,6 +16,11 @@ use App\Http\Controllers\Teacher\TeacherLoginController;
 use App\Http\Controllers\Teacher\TeacherRegisterController;
 use App\Http\Controllers\Teacher\TeacherPasswordRestController;
 use App\Http\Controllers\Teacher\TeacherForgotPasswordController;
+
+use App\Http\Controllers\Admin\AdminLoginController;
+use App\Http\Controllers\Admin\AdminRegisterController;
+use App\Http\Controllers\Admin\AdminPasswordRestController;
+use App\Http\Controllers\Admin\AdminForgotPasswordController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -77,4 +82,26 @@ Route::prefix('teacher')->group(function(){
     Route::get('/{id}/grade/{courseId}',[TeacherController::class,'grade'])->name('teacher.grade');
     Route::get('{id}/submitGrade/{courseId}',[TeacherController::class,'submitGrade'])->name('teacher.grade.submit');
     Route::get('{id}/service',[TeacherController::class,'service'])->name('teacher.service');
+});
+
+Route::prefix('admin')->group(function(){
+    Route::get('home',[AdminHomeController::class,'index'])->name('admin.dashboard');
+    Route::get('login',[AdminLoginController::class,'showLoginForm'])->name('admin.login');
+    Route::post('login',[AdminLoginController::class,'Login']);
+    Route::post('logout',[AdminLoginController::class,'Logout'])->name('admin.logout');
+    Route::get('password/confirm',[AdminPasswordConfirmController::class,'showConfirmForm'])->name('teacher.password.confirm');
+    Route::post('password/confirm',[AdminPasswordConfirmController::class,'confirm']);
+    Route::get('register',[AdminRegisterController::class,'showRegistrationForm'])->name('teacher.register');
+    Route::post('register',[AdminRegisterController::class,'register'])->name('admin.register.submit');
+    Route::get('/password/reset',[AdminForgotPasswordController::class,'showLinkRequestForm'])->name('admin.password.request');
+    Route::post('/password/email',[AdminForgotPasswordController::class,'sendResetLinkEmail'])->name('admin.password.email');
+    Route::get('/password/reset/token',[AdminPasswordRestController::class,'showResetForm'])->name('Admin.password.reset');
+    Route::post('/password/reset',[AdminPasswordRestController::class,'reset'])->name('admin.password.update');
+    Route::get('{id}/profile',[AdminrController::class,'profile'])->name('admin.profile');
+    Route::get('/{id}/profile/edit',[AdminController::class,'edit'])->name('admin.profile.edit');
+    Route::patch('/{id}/profile',[AdminController::class,'update'])->name('admin.profile.update');
+    Route::get('/{id}/students',[AdminController::class,'students'])->name('admin.students');
+    Route::get('/{id}/grade/{courseId}',[AdminController::class,'grade'])->name('admin.grade');
+    Route::get('{id}/submitGrade/{courseId}',[AdminController::class,'submitGrade'])->name('admin.grade.submit');
+    Route::get('{id}/service',[AdminController::class,'service'])->name('admin.service');
 });
