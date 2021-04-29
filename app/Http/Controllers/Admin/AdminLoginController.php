@@ -8,7 +8,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class TeacherLoginController extends Controller
+class AdminLoginController extends Controller
 {
     /*
     |--------------------------------------------------------------------------
@@ -28,7 +28,7 @@ class TeacherLoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::TEACHER_HOME;
+    protected $redirectTo = RouteServiceProvider::ADMIN_HOME;
 
     /**
      * Create a new controller instance.
@@ -37,10 +37,10 @@ class TeacherLoginController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest:teacher')->except('logout');
+        $this->middleware('guest:admin')->except('logout');
     }
     public function showLoginForm(){
-        return view('teacher.login');
+        return view('admin.login');
     }
     public function login(Request $request)
     {
@@ -52,13 +52,13 @@ class TeacherLoginController extends Controller
            ['email'=>$request->email,
            'password'=>$request->password],
            $request->remember)){
-               redirect()->route('teacher.home');
+               redirect()->route('admin.home');
            }
            return redirect()->back()->withInput($request->except('password'));
     }
     public function logout(Request $request)
     {
-        Auth::guard('teacher')->logout();
+        Auth::guard('admin')->logout();
         return redirect()->route('/');
     }
 }
