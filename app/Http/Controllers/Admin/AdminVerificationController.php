@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\VerifiesEmails;
 
-class TeacherVerificationController extends Controller
+class AdminVerificationController extends Controller
 {
     /*
     |--------------------------------------------------------------------------
@@ -26,7 +26,7 @@ class TeacherVerificationController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::TEACHER_HOME;
+    protected $redirectTo = RouteServiceProvider::ADMIN_HOME;
 
     /**
      * Create a new controller instance.

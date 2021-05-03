@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\ConfirmsPasswords;
 
-class TeacherConfirmPasswordController extends Controller
+class AdminConfirmPasswordController extends Controller
 {
     /*
     |--------------------------------------------------------------------------
@@ -26,7 +26,7 @@ class TeacherConfirmPasswordController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = RouteServiceProvider::ADMIN_HOME;
 
     /**
      * Create a new controller instance.
@@ -35,6 +35,6 @@ class TeacherConfirmPasswordController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth:teacher');
+        $this->middleware('auth:admin');
     }
 }

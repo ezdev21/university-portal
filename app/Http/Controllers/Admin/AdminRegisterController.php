@@ -4,14 +4,14 @@ namespace App\Http\Controllers\Teacher;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
-use App\Models\Teacher;
+use App\Models\Admin;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
-class TeacherRegisterController extends Controller
+class AdminRegisterController extends Controller
 {
     /*
     |--------------------------------------------------------------------------
@@ -39,12 +39,12 @@ class TeacherRegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest:teacher');
+        $this->middleware('guest:admin');
     }
 
     public function showRegistrationForm()
     {
-        return view('teacher.register');
+        return view('admin.register');
     }
     public function register(Request $request)
     {
@@ -54,13 +54,13 @@ class TeacherRegisterController extends Controller
             'password'=>['required','min:4']
         ]);
         try{
-            $teacher=Teacher::create(
+            $admin=Admin::create(
                 ['name'=>$request->name,
                  'email'=>$request->email,
                  'password'=>$request->password]
             );
-            Auth::guard('teacher')->loginUsingId($teacher->id);
-            return redirect()->route('teacher.home');
+            Auth::guard('admin')->loginUsingId($admin->id);
+            return redirect()->route('admin.home');
         }
         catch(\Exception $e){
           return redirect()->back()->withInput($request->except('password'));

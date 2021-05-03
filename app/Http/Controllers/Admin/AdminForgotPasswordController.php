@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Password;
 
-class TeacherForgotPasswordController extends Controller
+class AdminForgotPasswordController extends Controller
 {
     /*
     |--------------------------------------------------------------------------
@@ -23,15 +23,15 @@ class TeacherForgotPasswordController extends Controller
 
     use SendsPasswordResetEmails;
     public function __construct(){
-        $this->middleware('guest:teacher');
+        $this->middleware('guest:admin');
     }
     public function showLinkRequestForm()
     {
-        return view('teacher.passwords.email');
+        return view('admin.passwords.email');
     }
 
     public function broker(){
-        return Password::broker('teachers');
+        return Password::broker('admins');
     }
 
     public function sendResetLinkEmail(Request $request)

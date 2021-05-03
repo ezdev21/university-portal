@@ -48,11 +48,11 @@ class AdminLoginController extends Controller
            'email'=>['required','string','email'],
            'password'=>['required','string','min:4']
        ]);
-       if(Auth::guard('teacher')->attempt(
+       if(Auth::guard('admin')->attempt(
            ['email'=>$request->email,
            'password'=>$request->password],
            $request->remember)){
-               redirect()->route('admin.home');
+               return redirect()->route('admin.home');
            }
            return redirect()->back()->withInput($request->except('password'));
     }

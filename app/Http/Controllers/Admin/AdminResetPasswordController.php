@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Password;
 
-class TeacherResetPasswordController extends Controller
+class AdminResetPasswordController extends Controller
 {
     /*
     |--------------------------------------------------------------------------
@@ -29,23 +29,23 @@ class TeacherResetPasswordController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::TEACHER_HOME;
+    protected $redirectTo = RouteServiceProvider::ADMIN_HOME;
 
     public function __construct(){
-        $this->middleware('guest:teacher');
+        $this->middleware('guest:admin');
     }
     
     public function showResetForm(Request $request)
     {
-        return view('teacher.passwords.reset',[
+        return view('admin.passwords.reset',[
             'token'=>$request->token,
             'email'=>$request->email]);
     }
     public function guard(){
-        return Auth::guard('teacher');
+        return Auth::guard('admin');
     }
     public function broker(){
-       return Password::broker('teachers');
+       return Password::broker('admins');
     }
     public function reset(){
 
