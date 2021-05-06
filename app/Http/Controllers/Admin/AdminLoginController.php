@@ -53,7 +53,7 @@ class AdminLoginController extends Controller
            'password'=>$request->password],
            $request->remember)){
                return redirect()->route('admin.home');
-           }
+           }   
            return redirect()->back()->withInput($request->except('password'));
     }
     public function logout(Request $request)
