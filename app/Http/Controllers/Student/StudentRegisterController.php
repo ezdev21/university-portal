@@ -8,9 +8,6 @@ use App\Models\Student;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Http;
-use Illuminate\Http\Request;
 
 class StudentRegisterController extends Controller
 {
@@ -44,58 +41,33 @@ class StudentRegisterController extends Controller
         $this->middleware('guest:student');
     }
 
-    public function showRegistrationForm()
-     { 
-         return view('student.register');
-     }
-     public function register(Request $request)
+    /**
+     * Get a validator for an incoming registration request.
+     *
+     * @param  array  $data
+     * @return \Illuminate\Contracts\Validation\Validator
+     */
+    protected function validator(array $data)
     {
-        $this->validate($request,[
-            'name'=>['string','required'],
-            'email'=>['required','email'],
-            'password'=>['required','min:4']
+        return Validator::make($data, [
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
-        try{
-            $student=Student::create(
-                ['name'=>$request->name,
-                 'email'=>$request->email,
-                 'password'=>$request->password]
-            );
-            Auth::guard('student')->loginUsingId($student->id);
-            return redirect()->route('student.home');
-        }
-        catch(\Exception $e){
-          return redirect()->back()->withInput($request->except('password'));
-        }
     }
-    // /**
-    //  * Get a validator for an incoming registration request.
-    //  *
-    //  * @param  array  $data
-    //  * @return \Illuminate\Contracts\Validation\Validator
-    //  */
-    // protected function validator(array $data)
-    // {
-    //     return Validator::make($data, [
-    //         'name' => ['required', 'string', 'max:255'],
-    //         'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-    //         'password' => ['required', 'string', 'min:4', 'confirmed'],
-    //     ]);
-    // }
 
-    // /**
-    //  * Create a new user instance after a valid registration.
-    //  *
-    //  * @param  array  $data
-    //  * @return \App\Models\User
-    //  */
-    // protected function create(array $data)
-    // {
-    //     return Student::create([
-    //         'name' => $data['name'],
-    //         'email' => $data['email'],
-    //         'password' => Hash::make($data['password']),
-    //     ]);
-    // }
-    
+    /**
+     * Create a new user instance after a valid registration.
+     *
+     * @param  array  $data
+     * @return \App\Models\User
+     */
+    protected function create(array $data)
+    {
+        return Student::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+        ]);
+    }
 }
