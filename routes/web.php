@@ -58,6 +58,12 @@ Route::prefix('student')->group(function(){
     Route::patch('{id}/profile',[StudentController::class,'update'])->name('student.profile.update');
     Route::get('{id}/courseRegister',[StudentController::class,'showCourseRegistrationForm'])->name('student.course.register');
     Route::post('{id}/courseRegister',[StudentController::class,'courseRegister'])->name('student.course.register.submit');
+    Route::get('{id}/readmissionRequest',[StudentController::class,'showReadmissionForm']);
+    Route::get('{id}/withdrawalRequest',[StudentController::class,'showWithdrowalForm']);
+    Route::post('{id}/readmissionRequest',[StudentController::class,'readmissionRequest']);
+    Route::post('{id}/withdrawalRequest',[StudentController::class,'withdrawalRequest']);
+    Route::get('{id}/addAndDrop',[StudentController::class,'showAddAndDropForm']);
+    Route::post('{id}/addAndDrop',[StudentController::class,'addAndDrop']);
     Route::get('{id}/grade',[StudentController::class,'grade'])->name('student.grade');
     Route::get('{id}/service',[StudentController::class,'service'])->name('student.service');
 });
