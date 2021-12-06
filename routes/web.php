@@ -21,6 +21,8 @@ use App\Http\Controllers\Admin\AdminLoginController;
 use App\Http\Controllers\Admin\AdminRegisterController;
 use App\Http\Controllers\Admin\AdminPasswordRestController;
 use App\Http\Controllers\Admin\AdminForgotPasswordController;
+use App\Http\Controllers\PlacementController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -56,6 +58,7 @@ Route::prefix('student')->group(function(){
     Route::get('{id}/profile',[StudentController::class,'profile'])->name('student.profile');
     Route::get('{id}/profile/edit',[StudentController::class,'edit'])->name('student.profile.edit');
     Route::patch('{id}/profile',[StudentController::class,'update'])->name('student.profile.update');
+    Route::get('{id}/placement',[PlacementController::class,'placement']);
     Route::get('{id}/courseRegister',[StudentController::class,'showCourseRegistrationForm'])->name('student.course.register');
     Route::post('{id}/courseRegister',[StudentController::class,'courseRegister'])->name('student.course.register.submit');
     Route::get('{id}/readmissionRequest',[StudentController::class,'showReadmissionForm']);
