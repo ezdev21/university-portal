@@ -15,6 +15,8 @@ class CreateCafteriasTable extends Migration
     {
         Schema::create('cafterias', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->foreignId('campus_id');
             $table->timestamps();
         });
     }

@@ -15,6 +15,10 @@ class CreateBuildingsTable extends Migration
     {
         Schema::create('buildings', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('proctor_id');
+            $table->string('name');
+            $table->integer('total_dorms');
+            $table->foreignId('campus_id');
             $table->timestamps();
         });
     }
