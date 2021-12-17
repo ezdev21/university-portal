@@ -15,6 +15,7 @@ class CreateRegistrarsTable extends Migration
     {
         Schema::create('registrars', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('name');
             $table->timestamps();
         });
     }
