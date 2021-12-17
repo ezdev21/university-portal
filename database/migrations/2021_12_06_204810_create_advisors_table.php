@@ -15,6 +15,7 @@ class CreateAdvisorsTable extends Migration
     {
         Schema::create('advisors', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('teacher-id');
             $table->timestamps();
         });
     }
