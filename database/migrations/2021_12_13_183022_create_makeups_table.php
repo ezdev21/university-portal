@@ -15,6 +15,7 @@ class CreateMakeupsTable extends Migration
     {
         Schema::create('makeups', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('course_id');
             $table->timestamps();
         });
     }

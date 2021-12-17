@@ -15,6 +15,8 @@ class CreateGradeChangeRequestsTable extends Migration
     {
         Schema::create('grade_change_requests', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('student_id');
+            $table->foreignId('course_id');
             $table->timestamps();
         });
     }

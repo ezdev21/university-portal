@@ -15,6 +15,7 @@ class CreateCoordinatorsTable extends Migration
     {
         Schema::create('coordinators', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('teacher_id');
             $table->timestamps();
         });
     }

@@ -15,6 +15,8 @@ class CreateDormsTable extends Migration
     {
         Schema::create('dorms', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('building_id');
+            $table->integer('number');
             $table->timestamps();
         });
     }
