@@ -15,6 +15,10 @@ class CreateWithdrawsTable extends Migration
     {
         Schema::create('withdraws', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('student_id');
+            $table->integer('semester');
+            $table->text('reason');
+            $table->longText('detail');
             $table->timestamps();
         });
     }

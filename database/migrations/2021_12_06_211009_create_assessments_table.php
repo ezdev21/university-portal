@@ -15,6 +15,8 @@ class CreateAssessmentsTable extends Migration
     {
         Schema::create('assessments', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('student_id');
+            $table->foreignId('course_id');
             $table->timestamps();
         });
     }

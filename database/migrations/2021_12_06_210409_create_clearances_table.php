@@ -15,6 +15,10 @@ class CreateClearancesTable extends Migration
     {
         Schema::create('clearances', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('student_id');
+            $table->integer('semester');
+            $table->text('reason');
+            $table->longText('detail');
             $table->timestamps();
         });
     }
