@@ -41,7 +41,7 @@
             <div class="flex">
              <div class="w-full">
               <section class="flex flex-col break-words bg-white sm:border-1 sm:rounded-md sm:shadow-sm sm:shadow-lg">
-                <header class="font-semibold bg-gray-100 text-primary py-3 text-center sm:py-3 sm:rounded-t-md text-2xl text-first">
+                <header class="font-semibold bg-gray-200 text-primary py-3 text-center sm:py-3 sm:rounded-t-md text-2xl text-first">
                     Login to school system
                 </header>
                 <form class="w-full px-6 space-y-6 sm:px-10 sm:space-y-8" method="POST" action="{{ route('login') }}">
