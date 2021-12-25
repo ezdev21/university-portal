@@ -32,7 +32,7 @@
            </a>
            <div class="text-xl">
              <ul class="flex space-x-3">
-               <li><a href="">Home</a></li>
+               <li><a href="/">Home</a></li>
                <li><a href="">Announcement</a></li>  
                <li><a href="">Admission</a></li>
                <li><a href="">Exams</a></li>
