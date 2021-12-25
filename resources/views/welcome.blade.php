@@ -22,13 +22,24 @@
     </head>
     <body>
       <div class="">
-       <div class="flex items-center bg-primary text-white p-1">
-           <div class="flex items-center">
-             
+       <div class="flex items-center justify-evenly bg-primary text-white p-1">
+           <a href="/" class="flex items-center">
+             <img src="/storage/logo.png" class="w-16">
              <div class="font-bold">
-              <h1 class="text-2xl">My School System</h1>
-              <p class="text-xl">A Great Place To Learn.</p>   
+              <h1 class="text-xl">My School System</h1>
+              <p class="text-lg">A Great Place To Learn.</p>   
              </div>
+           </a>
+           <div class="text-xl">
+             <ul class="flex space-x-3">
+               <li><a href="">Home</a></li>
+               <li><a href="">Announcement</a></li>  
+               <li><a href="">Admission</a></li>
+               <li><a href="">Exams</a></li>
+               <li><a href="">FreshMan</a></li>
+               <li><a href="">Programs</a></li>
+               <li><a href="">Calendar</a></li>
+             </ul>  
            </div>
        </div>
        <div class="flex">
@@ -37,11 +48,11 @@
          </div>
          <div class="w-1/2">
           <div class="flex justify-center items-center">
-           <main class="sm:container sm:mx-auto sm:max-w-lg sm:mt-10">
+           <main class="py-3">
             <div class="flex">
              <div class="w-full">
               <section class="flex flex-col break-words bg-white sm:border-1 sm:rounded-md sm:shadow-sm sm:shadow-lg">
-                <header class="font-semibold bg-gray-200 text-primary py-3 text-center sm:py-3 sm:rounded-t-md text-2xl text-first">
+                <header class="font-semibold bg-gray-200 text-primary text-center sm:py-3 sm:rounded-t-md text-2xl text-first">
                     Login to school system
                 </header>
                 <form class="w-full px-6 space-y-6 sm:px-10 sm:space-y-8" method="POST" action="{{ route('login') }}">
