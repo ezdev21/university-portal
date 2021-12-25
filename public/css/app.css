@@ -42776,6 +42776,10 @@ video {
   --tw-backdrop-sepia: sepia(100%);
 }
 
+.right-shadow{
+  box-shadow: -5px 0 5px -5px rgb(199, 194, 194);
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;

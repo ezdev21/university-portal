@@ -33,19 +33,48 @@
            <div class="text-xl">
              <ul class="flex space-x-3">
                <li><a href="/">Home</a></li>
-               <li><a href="">Announcement</a></li>  
-               <li><a href="">Admission</a></li>
-               <li><a href="">Exams</a></li>
-               <li><a href="">FreshMan</a></li>
-               <li><a href="">Programs</a></li>
-               <li><a href="">Calendar</a></li>
-             </ul>  
+               <li><a href="/announcement">Announcement</a></li>  
+               <li><a href="/admission">Admission</a></li>
+               <li><a href="/exams">Exams</a></li>
+               <li><a href="/freshman">FreshMan</a></li>
+               <li><a href="/programs">Programs</a></li>
+               <li><a href="/calendar">Calendar</a></li>
+             </ul>
            </div>
        </div>
+       <div class="w-max mx-auto border-b-2 border-primary mb-3">
+         <h1 class="text-primary text-4xl font-bold uppercase tracking-wider">school system motto</h1>  
+       </div>
        <div class="flex">
-         <div class="w-1/2">
+         <div class="flex flex-col items-center w-1/2 px-3 right-shadow">
+           <h1 class="text-xl text-primary">This portal is designed to provide services for students, applicants, academic staff and for those who play management role at Addis Ababa University </h1>
+           <div>
 
-         </div>
+             <div>
+                 <h1>Apply for Exam</h1>
+                 <p>Prospective applicants and professionals can apply for exams offered at Addis Ababa University </p>
+             </div>
+           </div>
+           <div>
+
+             <div>
+              <h1>Apply for Admission</h1>
+              <p>New applicants who aspire to join Addis Ababa University can apply here . </p>
+             </div>
+           </div>
+           <div>
+             <div>
+              <h1>Upload Photo</h1>
+              <p>Upload your photo for your ID card and edit your basic profile information. </p>
+             </div>
+           </div>
+           <div>
+             <div>
+              <h1>Alumni Services</h1>
+              <p>You can submit alumni service requests to Addis Ababa University. </p>
+             </div>  
+           </div>  
+        </div>
          <div class="w-1/2">
           <div class="flex justify-center items-center">
            <main class="py-3">
