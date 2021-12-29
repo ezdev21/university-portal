@@ -42,36 +42,51 @@
              </ul>
            </div>
        </div>
-       <div class="w-max mx-auto border-b-2 border-primary mb-3">
-         <h1 class="text-primary text-4xl font-bold uppercase tracking-wider">school system motto</h1>  
+       <div class="w-max mx-auto border-b border-gray-300 mb-3">
+         <h1 class="text-primary text-3xl my-2 font-bold uppercase tracking-wider">Education is about creating leaders for tomorrow.</h1>  
        </div>
-       <div class="flex">
-         <div class="flex flex-col items-center w-1/2 px-3 right-shadow">
-           <h1 class="text-xl text-primary">This portal is designed to provide services for students, applicants, academic staff and for those who play management role at Addis Ababa University </h1>
-           <div>
-
+       <div class="flex mx-5">
+         <div class="flex flex-col space-y-3 w-1/2 px-3 right-shadow text-white text-lg">
+           <h1 class="text-xl text-primary">This portal is designed to provide services for students, applicants, academic staff and for those who play management role in the school system</h1>
+           <div class="flex space-x-3 bg-primary p-2 rounded-xl space-x-3">
+             <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-newspaper w-32" viewBox="0 0 16 16">
+                <path d="M0 2.5A1.5 1.5 0 0 1 1.5 1h11A1.5 1.5 0 0 1 14 2.5v10.528c0 .3-.05.654-.238.972h.738a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 1 1 0v9a1.5 1.5 0 0 1-1.5 1.5H1.497A1.497 1.497 0 0 1 0 13.5v-11zM12 14c.37 0 .654-.211.853-.441.092-.106.147-.279.147-.531V2.5a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0-.5.5v11c0 .278.223.5.497.5H12z"/>
+                <path d="M2 3h10v2H2V3zm0 3h4v3H2V6zm0 4h4v1H2v-1zm0 2h4v1H2v-1zm5-6h2v1H7V6zm3 0h2v1h-2V6zM7 8h2v1H7V8zm3 0h2v1h-2V8zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1z"/>
+             </svg>
              <div>
-                 <h1>Apply for Exam</h1>
+                 <h1><a href="">Apply for Exam</a></h1>
                  <p>Prospective applicants and professionals can apply for exams offered at Addis Ababa University </p>
              </div>
            </div>
-           <div>
-
+           <div class="flex bg-primary p-2 rounded-xl space-x-3">
+             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-people-fill w-32" viewBox="0 0 16 16">
+                <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                <path fill-rule="evenodd" d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"/>
+                <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
+             </svg>
              <div>
               <h1>Apply for Admission</h1>
-              <p>New applicants who aspire to join Addis Ababa University can apply here . </p>
+              <p>New applicants who aspire to join school system can apply here . </p>
              </div>
            </div>
-           <div>
+           <div class="flex bg-primary p-2 rounded-xl space-x-3">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-file-image w-32" viewBox="0 0 16 16">
+                <path d="M8.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                <path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM3 2a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v8l-2.083-2.083a.5.5 0 0 0-.76.063L8 11 5.835 9.7a.5.5 0 0 0-.611.076L3 12V2z"/>
+              </svg>
              <div>
               <h1>Upload Photo</h1>
               <p>Upload your photo for your ID card and edit your basic profile information. </p>
              </div>
            </div>
-           <div>
+           <div class="flex bg-primary p-2 rounded-xl space-x-3">
+             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-mortarboard-fill w-28" viewBox="0 0 16 16">
+                <path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917l-7.5-3.5Z"/>
+                <path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466 4.176 9.032Z"/>
+             </svg>  
              <div>
               <h1>Alumni Services</h1>
-              <p>You can submit alumni service requests to Addis Ababa University. </p>
+              <p>You can submit alumni service requests to school. </p>
              </div>  
            </div>  
         </div>
