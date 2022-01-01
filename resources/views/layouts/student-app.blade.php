@@ -21,21 +21,22 @@
 </head>
 <body>
     <div id="app">
-        <nav class="bg-green-900 flex">
+        <nav class="bg-primary flex">
             <div class="container">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="flex" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto flex">
-                      <li class="mx-2"><a class="text-xl text-white m-1" href="/">Home</a></li>
-                      <li class="mx-2"><a class="text-xl text-white m-1" href="{{ route('student.profile',auth()->guard('student')->user()->id) }}">profile</a></li>
-                      <li class="mx-2"><a class="text-xl text-white m-1" href="{{ route('student.course.registration',auth()->guard('student')->user()->id) }}">admission</a></li>
-                      <li class="mx-2"><a class="text-xl text-white m-1" href="{{ route('student.grade',auth()->guard('student')->user()->id) }}">grade result</a></li>
-                      <li class="mx-2"><a class="text-xl text-white m-1" href="{{ route('student.services',auth()->guard('student')->user()->id) }}">services</a></li>
-                    </ul>
-
+                    @auth
+                     <ul class="navbar-nav mr-auto flex">
+                        <li class="mx-2"><a class="text-xl text-white m-1" href="/">Home</a></li>
+                        <li class="mx-2"><a class="text-xl text-white m-1" href="{{ route('student.profile',auth()->guard('student')->user()->id) }}">profile</a></li>
+                        <li class="mx-2"><a class="text-xl text-white m-1" href="{{ route('student.course.registration',auth()->guard('student')->user()->id) }}">admission</a></li>
+                        <li class="mx-2"><a class="text-xl text-white m-1" href="{{ route('student.grade',auth()->guard('student')->user()->id) }}">grade result</a></li>
+                        <li class="mx-2"><a class="text-xl text-white m-1" href="{{ route('student.services',auth()->guard('student')->user()->id) }}">services</a></li>
+                     </ul>   
+                    @endauth
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto flex">
                         <!-- Authentication Links -->
