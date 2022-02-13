@@ -5,3 +5,16 @@
 .right-shadow{
   box-shadow: -5px 0 5px -5px rgb(199, 194, 194);
 }
+
+.bg-first{
+  background-color: #ffd55a;
+}
+.bg-second{
+  background-color: #6dd47e;
+}
+.text-first{
+  color: #3c4e77;
+}
+.text-second{
+  color: #6dd47e;
+}
