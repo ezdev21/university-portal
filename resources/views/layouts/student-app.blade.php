@@ -9,15 +9,12 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
     <div id="app">
@@ -35,7 +32,7 @@
                         <li class="mx-2"><a class="text-xl text-white m-1" href="{{ route('student.course.registration',auth()->guard('student')->user()->id) }}">admission</a></li>
                         <li class="mx-2"><a class="text-xl text-white m-1" href="{{ route('student.grade',auth()->guard('student')->user()->id) }}">grade result</a></li>
                         <li class="mx-2"><a class="text-xl text-white m-1" href="{{ route('student.services',auth()->guard('student')->user()->id) }}">services</a></li>
-                     </ul>   
+                     </ul>
                     @endauth
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto flex">
@@ -46,7 +43,7 @@
                                     <a class="nav-link text-xl text-white" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
                             @endif
-                            
+
                             @if (Route::has('register'))
                                 <li class="nav-item m-1">
                                     <a class="nav-link text-xl text-white" href="{{ route('register') }}">{{ __('Register') }}</a>
